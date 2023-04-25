@@ -8,7 +8,7 @@ DFS begins by visiting a starting vertex in the graph or tree data structure and
 
 Here's the pseudocode for DFS:
 
-```
+```c
 function DFS(node):
   if node is visited:
     return
@@ -51,7 +51,7 @@ DFS can be implemented using both recursive and iterative methods. The recursive
 
 Let’s consider the recursive approach first. The basic idea is to start at the root of the tree and explore each subtree recursively before moving on to the next subtree. This can be implemented using a recursive function that takes the current node as an argument:
 
-```
+```java
 void dfs(Node* current) {
     // Base case: current node is null
     if (current == NULL) {
@@ -72,7 +72,7 @@ The above code assumes that the tree is represented using a node structure that 
 
 The iterative approach, on the other hand, uses a stack data structure to keep track of the nodes to be visited. The basic idea is to start with the root node and push it onto the stack. Then, while the stack is not empty, pop the top node from the stack, process it, and push its children onto the stack.
 
-```
+```java
 void dfs(Node* root) {
     stack<Node*> s;
     s.push(root);
@@ -122,7 +122,7 @@ Now that we have covered the theory behind DFS, let's take a look at how we can 
 
 First, let's define our graph. We can represent it as a dictionary, where the keys are the vertices and the values are lists of adjacent vertices. For example, the following dictionary represents a graph with five vertices: 0, 1, 2, 3, and 4.
 
-```
+```java
 graph = {
     0: [1, 2],
     1: [0, 3, 4],
@@ -134,7 +134,7 @@ graph = {
 
 Next, we can define a function to perform DFS. We will use a recursive approach, where we start at a given vertex and visit all its neighbors recursively, marking each vertex as visited as we go.
 
-```
+```java
 def dfs(graph, start, visited=None):
     if visited is None:
         visited = set()
@@ -154,13 +154,13 @@ Let's break down how this function works:
 
 We can now call the `dfs` function on any vertex in the graph to perform DFS starting at that vertex. For example, to perform DFS starting at vertex 0, we would call:
 
-```
+```python
 dfs(graph, 0)
 ```
 
 This will output the following:
 
-```
+```editorconfig
 0
 1
 3
