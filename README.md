@@ -1,8 +1,8 @@
-# Depth First Search Crash Course
+# 🕵 Depth First Search Crash Course
 
 Depth-First Search (DFS) is a popular algorithm used for traversing or searching through a graph or a tree data structure. DFS is an algorithm that searches deeper into a graph or tree data structure before backtracking to explore other branches. It is one of the fundamental algorithms in computer science and has numerous applications, including in artificial intelligence, machine learning, and data analysis.
 
-DFS begins by visiting a starting vertex in the graph or tree data structure and then traversing as far as possible along each branch before backtracking. This process continues until all vertices have been visited. In essence, DFS performs a systematic traversal of the graph, exploring as much as possible before backtracking.
+DFS begins by visiting a starting vertex in the graph or tree data structure and then traversing as far as possible along each branch before backtracking. This process continues until all vertices have been visited. In essence, DFS performs a systematic traversal of the graph, exploring as much as possible before backtracking
 
 ### Pseudocode for DFS
 
