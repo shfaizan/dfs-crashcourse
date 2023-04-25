@@ -1,1 +1,17 @@
-# dfs-crashcourse
+# Depth First Search Crash Course
+
+## Depth First Search Crash Course
+
+Depth-First Search (DFS) is a popular algorithm used for traversing or searching through a graph or a tree data structure. DFS is an algorithm that searches deeper into a graph or tree data structure before backtracking to explore other branches. It is one of the fundamental algorithms in computer science and has numerous applications, including in artificial intelligence, machine learning, and data analysis.DFS begins by visiting a starting vertex in the graph or tree data structure and then traversing as far as possible along each branch before backtracking. This process continues until all vertices have been visited. In essence, DFS performs a systematic traversal of the graph, exploring as much as possible before backtracking.
+
+#### Pseudocode for DFS <a href="#pseudocode-for-dfs" id="pseudocode-for-dfs"></a>
+
+Here's the pseudocode for DFS:function DFS(node):if node is visited:returnmark node as visitedfor each neighbor of node:DFS(neighbor)​In this pseudocode, `node` represents the current node being visited. The function first checks if the node has been visited before. If it has, the function returns. Otherwise, it marks the node as visited and recursively visits all of its neighbors using the same DFS function.
+
+#### Time Complexity of DFS <a href="#time-complexity-of-dfs" id="time-complexity-of-dfs"></a>
+
+The time complexity of DFS depends on the size of the graph and the implementation of the algorithm. In the worst case, DFS can take O(V+E) time, where V is the number of vertices and E is the number of edges in the graph. This is because the algorithm must visit each vertex and edge in the graph.However, the actual time complexity can vary depending on the structure of the graph and the order in which the nodes are visited. In some cases, DFS can take less than O(V+E) time, while in other cases it can take more.Let's dive deep into the Depth First Search and break it into parts
+
+#### Part 1: Understanding DFS and Its Advantages <a href="#2f7a" id="2f7a"></a>
+
+Depth-First Search (DFS) is a popular algorithm used for traversing graphs and trees. It starts at a particular node, and explores as far as possible along each branch before backtracking. This means that it visits all the descendants of a node before moving on to its siblings, and ultimately, its ancestors.One of the primary advantages of DFS is its simplicity. It’s easy to implement and understand, even for beginners in computer science. Moreover, it’s highly flexible and can be adapted to solve a wide range of problems.Another advantage of DFS is that it can be used to solve various graph-related problems such as finding cycles, topological sorting, and connectivity. It can also be used to solve puzzles such as finding a path through a maze, or finding a solution to the game of Sudoku.DFS is also more memory-efficient than breadth-first search (BFS), another popular algorithm for traversing graphs and trees. This is because DFS only needs to remember the path it has taken to reach a particular node, whereas BFS needs to keep track of all the nodes at a particular level.Despite its advantages, DFS also has some drawbacks. One of the main drawbacks is that it can get stuck in an infinite loop if the graph has cycles. To avoid this, a technique called “marking” is often used to keep track of which nodes have already been visited.
