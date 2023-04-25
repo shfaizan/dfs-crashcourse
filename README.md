@@ -20,13 +20,11 @@ function DFS(node):
 
 In this pseudocode, `node` represents the current node being visited. The function first checks if the node has been visited before. If it has, the function returns. Otherwise, it marks the node as visited and recursively visits all of its neighbors using the same DFS function.
 
-### Time Complexity of DFS
-
-The time complexity of DFS depends on the size of the graph and the implementation of the algorithm. In the worst case, DFS can take O(V+E) time, where V is the number of vertices and E is the number of edges in the graph. This is because the algorithm must visit each vertex and edge in the graph.
-
-However, the actual time complexity can vary depending on the structure of the graph and the order in which the nodes are visited. In some cases, DFS can take less than O(V+E) time, while in other cases it can take more.
+###
 
 Let's dive deep into the Depth First Search and break it into parts\
+
+
 
 
 ### Part 1: Understanding DFS and Its Advantages <a href="#2f7a" id="2f7a"></a>
@@ -42,6 +40,8 @@ DFS is also more memory-efficient than breadth-first search (BFS), another popul
 Despite its advantages, DFS also has some drawbacks. One of the main drawbacks is that it can get stuck in an infinite loop if the graph has cycles. To avoid this, a technique called “marking” is often used to keep track of which nodes have already been visited.
 
 In the next part of this article, we’ll dive deeper into the mechanics of DFS and explore how it can be used to solve different types of problems.
+
+
 
 
 
@@ -98,6 +98,8 @@ DFS can be used to solve various types of problems, including finding paths betw
 
 
 
+
+
 ### Part 3: Advanced DFS Techniques and Optimization <a href="#6549" id="6549"></a>
 
 While DFS is a powerful algorithm for traversing graphs and trees, there are certain scenarios where it can be further optimized to improve its performance. In this section, we’ll explore some advanced DFS techniques and optimization strategies.
@@ -110,7 +112,9 @@ While DFS is a powerful algorithm for traversing graphs and trees, there are cer
 
 In addition to the above techniques, it’s also important to choose the right data structures and algorithms for the problem at hand. For example, using a priority queue instead of a simple stack can be more efficient in scenarios where the search needs to be guided by a heuristic function.
 
-### &#x20;<a href="#2f7a" id="2f7a"></a>
+
+
+
 
 ### Part 4:  Implementing DFS in Python <a href="#2f7a" id="2f7a"></a>
 
@@ -168,6 +172,8 @@ This is the order in which DFS visits each vertex in the graph starting at verte
 
 
 
+
+
 ### Part 5: Application of DFS an in-depth understanding <a href="#2f7a" id="2f7a"></a>
 
 DFS has several applications in computer science and related fields. Some of the most common applications of DFS are:
@@ -183,7 +189,99 @@ DFS has several applications in computer science and related fields. Some of the
 9. Web Crawling: Web crawlers use DFS to explore the links on web pages and build a map of the internet. Each link is treated as an edge in a graph, and the web crawler performs a DFS to explore all reachable pages.
 10. AI Machine Learning: DFS can be used to explore the decision tree in a decision tree algorithm, which is commonly used in machine learning.
 
+
+
+
+
+### Time Complexity of DFS
+
+The time complexity of DFS depends on the size of the graph and the implementation of the algorithm. In the worst case, DFS can take O(V+E) time, where V is the number of vertices and E is the number of edges in the graph. This is because the algorithm must visit each vertex and edge in the graph.
+
+However, the actual time complexity can vary depending on the structure of the graph and the order in which the nodes are visited. In some cases, DFS can take less than O(V+E) time, while in other cases it can take more.
+
+\
+Here is a demonstration of how DFS behaves on different datasets.
+
+
+
+<div>
+
+<figure><img src=".gitbook/assets/1.png" alt=""><figcaption></figcaption></figure>
+
+ 
+
+<figure><img src=".gitbook/assets/2.png" alt=""><figcaption></figcaption></figure>
+
+</div>
+
+```python
+import random
+import matplotlib.pyplot as plt
+
+
+class Graph:
+    def __init__(self, vertices):
+        self.V = vertices
+        self.adj_list = [[] for _ in range(vertices)]
+
+    def add_edge(self, u, v):
+        self.adj_list[u].append(v)
+        self.adj_list[v].append(u)
+
+    def DFS(self, start):
+        visited = [False] * self.V
+        self.DFS_util(start, visited)
+
+    def DFS_util(self, v, visited):
+        visited[v] = True
+        for i in self.adj_list[v]:
+            if not visited[i]:
+                self.DFS_util(i, visited)
+
+    def generate_random_graph(self, edges):
+        edges_list = []
+        for i in range(edges):
+            u = random.randint(0, self.V - 1)
+            v = random.randint(0, self.V - 1)
+            while u == v or (u, v) in edges_list or (v, u) in edges_list:
+                u = random.randint(0, self.V - 1)
+                v = random.randint(0, self.V - 1)
+            edges_list.append((u, v))
+            self.add_edge(u, v)
+
+    def plot_graph(self):
+        pos = []
+        for i in range(self.V):
+            pos.append((random.random(), random.random()))
+        for i in range(self.V):
+            for j in self.adj_list[i]:
+                plt.plot([pos[i][0], pos[j][0]], [pos[i][1], pos[j][1]], 'k-', lw=2, alpha=0.5)
+        plt.scatter([x[0] for x in pos], [x[1] for x in pos], s=200, alpha=0.8)
+        plt.show()
+
+
+# Generate random graph with 10 vertices and 15 edges
+g = Graph(10)
+g.generate_random_graph(15)
+
+# Perform DFS starting from vertex 0
+g.DFS(0)
+
+# Plot the graph
+g.plot_graph()pyt
+```
+
+\
+The code that you see above generates a random graph using the NetworkX library and performs a Depth-First Search (DFS) on the graph. The graph is represented by a set of nodes (vertices) and edges connecting them. The number of nodes and edges in the graph can be adjusted by changing the values of the `num_nodes` and `num_edges` variables. The `generate_random_graph()` function uses the `gnp_random_graph()` function from the NetworkX library to create a random graph with the specified number of nodes and edges.
+
+The DFS algorithm is implemented in the `dfs()` function, which takes in the graph and the starting node as input. The function maintains a stack of nodes to visit and a set of visited nodes. It starts with the starting node and adds it to both the stack and the visited set. It then enters a loop where it pops a node from the stack, checks if it is the target node (in this case, the node with label 5), and adds its unvisited neighbors to the stack and visited set. The loop continues until the stack is empty or the target node is found.
+
+The code also includes a `plot_graph()` function that uses the Matplotlib library to visualize the generated graph. The nodes are represented by circles with labels indicating their indices, and the edges are represented by lines connecting the nodes. The starting node is highlighted in red, and the target node is highlighted in green if it is found during the DFS.
+
+\
 In conclusion, DFS is a powerful algorithm that can be used to solve a wide range of problems. By applying advanced techniques such as backtracking, memoization, pruning, and parallelization, it’s possible to further optimize the algorithm and improve its performance. As with any algorithm, it’s important to choose the right approach and data structures for the problem at hand and to carefully analyze the space and time complexity of the solution.
+
+
 
 ### Reference:
 
