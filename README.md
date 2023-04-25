@@ -166,8 +166,6 @@ This will output the following:
 
 This is the order in which DFS visits each vertex in the graph starting at vertex 0. Note that because the graph is not guaranteed to be strongly connected, there may be multiple components, and we need to call `dfs` on each unvisited vertex to explore the entire graph.
 
-That's it for implementing DFS in Python! In the next part, we will look at some applications of DFS in machine learning.
-
 
 
 ### Part 5: Application of DFS an in-depth understanding <a href="#2f7a" id="2f7a"></a>
@@ -185,11 +183,11 @@ DFS has several applications in computer science and related fields. Some of the
 9. Web Crawling: Web crawlers use DFS to explore the links on web pages and build a map of the internet. Each link is treated as an edge in a graph, and the web crawler performs a DFS to explore all reachable pages.
 10. AI Machine Learning: DFS can be used to explore the decision tree in a decision tree algorithm, which is commonly used in machine learning.
 
-
+In conclusion, DFS is a powerful algorithm that can be used to solve a wide range of problems. By applying advanced techniques such as backtracking, memoization, pruning, and parallelization, it’s possible to further optimize the algorithm and improve its performance. As with any algorithm, it’s important to choose the right approach and data structures for the problem at hand and to carefully analyze the space and time complexity of the solution.
 
 ### Reference:
 
-1. Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to algorithms. MIT press. This classic textbook provides a comprehensive introduction to algorithms, including DFS and other graph traversal algorithms.
+1. Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to algorithms. MIT Press. This classic textbook provides a comprehensive introduction to algorithms, including DFS and other graph traversal algorithms.
 2. Sedgewick, R., & Wayne, K. (2011). Algorithms. Addison-Wesley Professional. This book provides a modern introduction to algorithms, including DFS and other graph algorithms, and emphasizes practical applications and real-world examples.
 3. Tarjan, R. E. (1972). Depth-first search and linear graph algorithms. SIAM journal on computing, 1(2), 146–160. This seminal paper by Robert Tarjan introduces DFS and provides a detailed analysis of its time and space complexity, as well as applications in topological sorting and connected components
 4. Skiena, S. S. (2008). The Algorithm Design Manual (2nd ed.). Springer.
